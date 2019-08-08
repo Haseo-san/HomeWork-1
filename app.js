@@ -1,10 +1,10 @@
 function pensionCheck() {
     let name = prompt('Ваше имя?'),
         familyName = prompt('Ваша фамилия?'),
-        id,
         gender = prompt('Ваш пол?', 'М-Ж'),
         age = prompt('Сколько вам лет?'),
-        pension = 'Нет';
+        pension = 'Нет',
+        id;
 
     while (name == null || name === '') {
         alert('Введите имя');
@@ -16,7 +16,7 @@ function pensionCheck() {
         familyName = prompt('Ваша фамилия?');
     }
 
-    while (gender !== 'М' && gender !== 'Ж' && gender !== 'м' && gender !== 'ж'){
+    while (gender.toUpperCase() !== 'М' && gender.toUpperCase() !== 'Ж'){
         gender = prompt('Ваш пол?', 'М-Ж');
     }
 
@@ -24,13 +24,13 @@ function pensionCheck() {
         age = prompt('Ошибка в возрасте');
     }
 
-    if (age >= 60 && (gender === 'М' || gender === 'м')){
+    if (age >= 60 && gender.toUpperCase() === 'М'){
         pension = 'Да';
-    } else if(age >= 55 && (gender === 'Ж' || gender === 'ж')){
+    } else if(age >= 55 && gender.toUpperCase() === 'Ж'){
         pension = 'Да';
     }
 
-    id = 'Полное имя: ' + name + ' ' + familyName + '\nПол: ' + gender + '\nНа пенсии: ' + pension;
+    id = `Полное имя: ${name} ${familyName} \nПол: ${gender} \nНа пенсии: ${pension}`;
     alert(id);
 }
 
