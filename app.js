@@ -6,9 +6,9 @@ function pensionCheck() {
         pension = 'Нет',
         id;
 
-    function emptyOrSpaces(input){
-        return input === null || input.match(/^ *$/) !== null;
-    }
+    let emptyOrSpaces = (input) => input === null || input.match(/^ *$/) !== null;
+
+    let ageCheck = (input) => input <= 0 || isNaN(input);
 
     while (emptyOrSpaces(name)) {
         alert('Введите имя');
@@ -24,8 +24,9 @@ function pensionCheck() {
         gender = prompt('Ваш пол?', 'М-Ж');
     }
 
-    while (age <= 0 || isNaN(age)){
-        age = prompt('Ошибка в возрасте');
+    while (ageCheck(age)){
+        alert('Ошибка в возрасте');
+        age = prompt('Сколько вам лет?');
     }
 
     if (age >= 60 && gender.toUpperCase() === 'М'){
