@@ -6,12 +6,12 @@ function pensionCheck() {
         pension = 'Нет',
         id;
 
-    while (name == null || name === '') {
+    while (name == null || name === ' ') {
         alert('Введите имя');
         name = prompt('Ваше имя?');
     }
 
-    while (familyName == null || familyName === '') {
+    while (familyName == null || familyName === ' ') {
         alert('Введите фамилию');
         familyName = prompt('Ваша фамилия?');
     }
