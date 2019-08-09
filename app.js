@@ -6,9 +6,9 @@ function pensionCheck() {
         pension = 'Нет',
         id;
 
-    let emptyOrSpaces = (input) => input === null || input.match(/^ *$/) !== null;
-    let genderCheck = (input) => !/[МмЖж]/.test(input) || input.length > 1;
-    let ageCheck = (input) => input <= 0 || isNaN(input);
+    let emptyOrSpaces = (input) => input === null || input.match(/^ *$/) !== null,
+        genderCheck = (input) => !/[МмЖж]/.test(input) || input.length > 1,
+        ageCheck = (input) => input <= 0 || isNaN(input);
 
     while (emptyOrSpaces(name)) {
         alert('Введите имя');
