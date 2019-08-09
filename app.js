@@ -7,7 +7,7 @@ function pensionCheck() {
         id;
 
     let emptyOrSpaces = (input) => input === null || input.match(/^ *$/) !== null;
-
+    let genderCheck = (input) => !/[МмЖж]/.test(input) || input.length > 1;
     let ageCheck = (input) => input <= 0 || isNaN(input);
 
     while (emptyOrSpaces(name)) {
@@ -20,7 +20,7 @@ function pensionCheck() {
         familyName = prompt('Ваша фамилия?');
     }
 
-    while (gender.toUpperCase() !== 'М' && gender.toUpperCase() !== 'Ж'){
+    while (genderCheck(gender)){
         gender = prompt('Ваш пол?', 'М-Ж');
     }
 
