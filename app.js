@@ -6,12 +6,16 @@ function pensionCheck() {
         pension = 'Нет',
         id;
 
-    while (name == null || name === '') {
+    function emptyOrSpaces(input){
+        return input === null || input.match(/^ *$/) !== null;
+    }
+
+    while (emptyOrSpaces(name)) {
         alert('Введите имя');
         name = prompt('Ваше имя?');
     }
 
-    while (familyName == null || familyName === '') {
+    while (emptyOrSpaces(familyName)) {
         alert('Введите фамилию');
         familyName = prompt('Ваша фамилия?');
     }
