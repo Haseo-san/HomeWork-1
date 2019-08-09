@@ -3,7 +3,8 @@ function pensionCheck() {
         familyName = prompt('Ваша фамилия?'),
         gender = prompt('Ваш пол?', 'М-Ж'),
         age = prompt('Сколько вам лет?'),
-        pension = 'Нет',
+        pension = false,
+        onPension,
         id;
 
     let emptyOrSpaces = (input) => input === null || input.match(/^ *$/) !== null,
@@ -30,12 +31,18 @@ function pensionCheck() {
     }
 
     if (age >= 60 && gender.toUpperCase() === 'М'){
-        pension = 'Да';
+        pension = true;
     } else if(age >= 55 && gender.toUpperCase() === 'Ж'){
-        pension = 'Да';
+        pension = true;
     }
 
-    id = `Полное имя: ${name} ${familyName} \nПол: ${gender} \nНа пенсии: ${pension}`;
+    if (pension = true){
+        onPension = 'Да'
+    } else {
+        onPension = 'Нет'
+    }
+
+    id = `Полное имя: ${name} ${familyName} \nПол: ${gender} \nНа пенсии: ${onPension}`;
     alert(id);
 }
 
